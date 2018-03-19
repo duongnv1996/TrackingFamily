@@ -33,6 +33,6 @@ public interface ServiceRetrofit {
     @FormUrlEncoded
     @POST("/")
     Call<ApiResponse<User>> updateInfor(@Field("type") String type, @Field("phone") String phone, @Field("password") String pass, @Field("username") String username,
-                                     @Field("email") String email, @Field("family") String family_id,@Field("user_id") String user_id
+                                     @Field("email") String email, @Field("family_id") String family_id,@Field("user_id") String user_id
     );
 }
