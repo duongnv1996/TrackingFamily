@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="@dimen/dp30"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
@@ -18,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign up"
+            android:text="Update Profile"
             android:textColor="@color/black"
             android:textSize="@dimen/dps24"
             android:textStyle="bold" />
@@ -209,9 +210,10 @@
         android:layout_marginTop="@dimen/dp10"
         android:src="@drawable/sendbutton"
 
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <LinearLayout
+        android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dp20"
@@ -221,14 +223,14 @@
         android:foreground="?selectableItemBackground"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="SIGN IN"
+            android:text="Save"
             android:textColor="@color/white"
             android:textSize="@dimen/dps16" />
 
@@ -239,28 +241,15 @@
             app:srcCompat="@drawable/ic_navigate_next_black_24dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Have an Account? "
-            android:textColor="@color/gray" />
-
-        <TextView
-            android:id="@+id/btnGotoSignIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="SIGN IN"
-            android:textColor="@color/colorPrimary" />
-    </LinearLayout>
-
-
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="Logout"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/dps16" />
 </LinearLayout>

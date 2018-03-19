@@ -9,6 +9,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".application.AppController"
         android:allowBackup="true"
@@ -31,17 +33,24 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:name=".ui.map.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoactionBar">
 
         </activity>
-        <activity android:name=".ui.AuthActivity"
+        <activity
+            android:name=".ui.AuthActivity"
             android:theme="@style/AppTheme.NoactionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:theme="@style/AppTheme.NoactionBar">
+
         </activity>
     </application>
 

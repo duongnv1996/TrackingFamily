@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TrackingFamily</string>
     <string name="title_activity_maps">Map</string>
+    <string name="distance_booking_format">Distance: %s</string>
 </resources>

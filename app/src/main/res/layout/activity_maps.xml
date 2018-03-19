@@ -1,8 +1,178 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.software.trackingfamily.MapsActivity" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.software.trackingfamily.ui.map.MapsActivity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+       >
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:tint="@color/white"
+                android:paddingRight="@dimen/dp20"
+                android:paddingLeft="@dimen/dp20"
+                app:srcCompat="@drawable/ic_chevron_left_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Family Near You"
+                fontPath="fonts/font.ttf"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dps16" />
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp20"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_launcher" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/layout_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDistance"
+                style="@style/map_text_title"
+                fontPath="fonts/font.ttf"
+
+                android:text="Distance: 7 km" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/map_text_title"
+                fontPath="fonts/font.ttf"
+
+                android:text="Time: 10 Minutes" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rcvMember"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp20"
+        android:src="@drawable/map_layer_my_location"
+        android:tint="@color/white"
+        app:backgroundTint="@color/map_bg_layout_infor"
+        app:fabSize="mini"
+        app:rippleColor="@color/white" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp30"
+        android:paddingTop="@dimen/dp20"
+        android:paddingBottom="@dimen/dp20"
+        android:clipToPadding="false"
+        android:background="@drawable/map_bg_rcv_member" />
+
+    <LinearLayout
+        android:id="@+id/LayoutinfoMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp30"
+        android:background="@drawable/map_bg_rcv_member"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarMember"
+            android:layout_width="wrap_content"
+            android:paddingBottom="@dimen/dp20"
+            android:paddingTop="@dimen/dp20"
+            android:paddingLeft="@dimen/dp20"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_weight="1"
+
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jonh Legend"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0962 672 240"
+                android:textColor="@color/white_1"
+                android:textSize="@dimen/dps13" />
+
+            <TextView
+                android:id="@+id/lastTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="( 3 mins ago )"
+                android:textColor="@color/white_1"
+                android:textSize="@dimen/dps13" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnDirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:src="@drawable/circle_blue" />
+
+        <ImageView
+            android:id="@+id/btnCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/dp20"
+            android:src="@drawable/circle_green" />
+    </LinearLayout>
+</RelativeLayout>

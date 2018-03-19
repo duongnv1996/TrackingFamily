@@ -7,4 +7,10 @@
     <color name="gray">#b2b2b2</color>
     <color name="bg_shadow">#76b2b2b2</color>
     <color name="white">#fff</color>
+    <color name="white_1">#d6d6d6</color>
+    <color name="green">#23e200</color>
+
+
+    <color name="map_bg_layout_infor">#363739</color>
+
 </resources>
